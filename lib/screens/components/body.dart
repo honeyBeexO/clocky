@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../size_config.dart';
 import 'clock.dart';
+import 'country_card.dart';
 import 'time_in_hour_minute.dart';
 
 class Body extends StatelessWidget {
@@ -20,13 +20,24 @@ class Body extends StatelessWidget {
             Spacer(),
             Clock(),
             Spacer(),
-            SizedBox(
-              width: getProportionateScreenWidth(233),
-              child: AspectRatio(
-                aspectRatio: 1.33,
-                child: Container(
-                  color: Colors.amberAccent,
-                ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  CountryCard(
+                    image: 'assets/icons/Liberty.svg',
+                    time: '10:24',
+                    timeZone: '+3HRS | EST',
+                    period: 'PM',
+                  ),
+                  CountryCard(
+                    image: 'assets/icons/Sydney.svg',
+                    location: 'Sydeny, Australia',
+                    time: '16:24',
+                    timeZone: '-7HRS | EST',
+                    period: 'PM',
+                  ),
+                ],
               ),
             ),
           ],
