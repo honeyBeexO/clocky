@@ -34,7 +34,7 @@ class Body extends StatelessWidget {
                     image: 'assets/icons/Sydney.svg',
                     location: 'Sydeny, Australia',
                     time: '16:24',
-                    timeZone: '-7HRS | EST',
+                    timeZone: '+19HRS | AEST',
                     period: 'PM',
                   ),
                 ],

@@ -10,6 +10,53 @@ class HomeScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(context),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0.0,
+        color: Theme.of(context).bottomAppBarTheme.color,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SvgPicture.asset(
+                'assets/icons/clock.svg',
+                height: 20,
+                width: 20,
+                color: Theme.of(context).iconTheme.color,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/world.svg',
+                    height: 24,
+                    width: 24,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    'World'.toUpperCase(),
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                ],
+              ),
+              SvgPicture.asset(
+                'assets/icons/watch_2.svg',
+                height: 20,
+                width: 20,
+                color: Theme.of(context).iconTheme.color,
+              ),
+              SvgPicture.asset(
+                'assets/icons/stop_watch.svg',
+                height: 20,
+                width: 20,
+                color: Theme.of(context).iconTheme.color,
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Body(),
     );
   }
