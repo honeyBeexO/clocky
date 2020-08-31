@@ -41,11 +41,11 @@ class ClockPainter extends CustomPainter {
     double hourHandX = centerX +
         size.width *
             0.3 *
-            cos((dateTime.minute * 30 + dateTime.minute * 0.5) * pi / 180);
+            cos((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
     double hourHandY = centerY +
         size.width *
             0.3 *
-            sin((dateTime.minute * 30 + dateTime.minute * 0.5) * pi / 180);
+            sin((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
     canvas.drawLine(center, Offset(hourHandX, hourHandY), hourPaintBrush);
     // // 60sec ==> 360deg
     // //1sec ==> 360/60 == 6deg
