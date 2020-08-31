@@ -12,6 +12,7 @@ class _TimeInHourAndMinuteState extends State<TimeInHourAndMinute> {
   @override
   void initState() {
     super.initState();
+    print('RE-INIT STATE');
     Timer.periodic(
       Duration(seconds: 1),
       (timer) {
@@ -27,13 +28,14 @@ class _TimeInHourAndMinuteState extends State<TimeInHourAndMinute> {
   @override
   Widget build(BuildContext context) {
     String _period = _timeOfDay.period == DayPeriod.am ? 'AM' : 'PM';
+    print('RE_BUILD');
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         //${_timeOfDay.hour}==> 24h
         //{_timeOfDay.hourOfPeriod ==> 12h
         Text(
-          '${_timeOfDay.hourOfPeriod}:${_timeOfDay.minute}',
+          '${_timeOfDay.hour}:${_timeOfDay.minute}',
           style: Theme.of(context).textTheme.headline4.copyWith(fontSize: 100),
         ),
         SizedBox(width: 5.0),
