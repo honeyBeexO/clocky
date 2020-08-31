@@ -49,8 +49,33 @@ class _ClockState extends State<Clock> {
               ),
             ],
           ),
+          child: CustomPaint(
+            painter: ClockPainter(context: context),
+          ),
         ),
       ),
     );
   }
+}
+
+class ClockPainter extends CustomPainter {
+  final BuildContext context;
+
+  ClockPainter({this.context});
+  @override
+  void paint(Canvas canvas, Size size) {
+    double centerX = size.width / 2;
+    double centerY = size.height / 2;
+    Offset center = Offset(centerX, centerY);
+    Paint dotPainter = Paint()
+      ..color = Theme.of(context).primaryIconTheme.color;
+    canvas.drawCircle(
+      center,
+      24.0,
+      dotPainter,
+    );
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
