@@ -11,7 +11,7 @@ class ClockPainter extends CustomPainter {
     double centerX = size.width / 2;
     double centerY = size.height / 2;
     Offset center = Offset(centerX, centerY);
-    double radius = min(centerX, centerY);
+    //double radius = min(centerX, centerY);
 
     //Lines: sec
     Paint secHandBrush = Paint()
